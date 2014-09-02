@@ -1,0 +1,8 @@
+
+packer_cache/
+*.box
+*.bak
+*.iso
+C:\\nppdf32Log\\debuglog.txt
+.vagrant/
+*.swp
