@@ -5,7 +5,7 @@
       "execute_command": "sudo {{.Vars}} sh {{.Path}}",
       "scripts": [
         "scripts/vagrant.sh",
-        "scripts/vmtools.sh",
+        "scripts/virtualbox.sh",
 	"scripts/vortexbox.sh",
         "scripts/cleanup.sh",
         "scripts/zerodisk.sh"
@@ -25,6 +25,7 @@
       "iso_checksum": "ac4fe61974d9018e625ad223008270ac",
       "iso_checksum_type": "md5",
       "ssh_username": "root",
+      "ssh_port": 22,
       "ssh_password": "vortexbox",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks_f20_vb_small.cfg<enter><wait>"
@@ -36,7 +37,7 @@
       "guest_os_type": "Fedora",
       "headless": "false",
       "http_directory": "http",
-      "shutdown_command": "sudo /sbin/halt -p",
+      "shutdown_command": "echo 'vagrant'| sudo -S shutdown -P now",
       "vboxmanage": [
         [ "modifyvm", "{{.Name}}", "--memory", "2000" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
